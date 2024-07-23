@@ -2,8 +2,8 @@ package config
 
 import (
 	"log"
-	"os"
 
+	"github.com/Ilya-Semakin/fh/models"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 	"github.com/joho/godotenv"

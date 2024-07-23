@@ -3,6 +3,10 @@ module github.com/Ilya-Semakin/fh
 go 1.18
 
 require (
+    github.com/go-oauth2/oauth2/v4 v4.14.0
+    github.com/sirupsen/logrus v1.8.1
+    github.com/jinzhu/gorm v1.9.16
+    github.com/gorilla/sessions v1.2.1
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.10.0
 	github.com/jinzhu/gorm v1.9.16

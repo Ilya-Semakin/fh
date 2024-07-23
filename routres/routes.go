@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/Ilya-Semakin/fh/controllers"
-	"github.com/Ilya-Semakin/fh/middlewares"
+	middelwares "github.com/Ilya-Semakin/fh/middlewares"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,7 +16,7 @@ func SetupRoutes(r *gin.Engine) {
 	r.GET("/auth/google/callback", controllers.OAuthGoogleCallback)
 
 	auth := r.Group("/auth")
-	auth.Use(middlewares.JWTAuthMiddleware())
+	auth.Use(middelwares.JWTAuthMiddleware())
 	{
 		// тут можно маршруты ебануть
 	}

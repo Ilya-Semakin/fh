@@ -6,9 +6,9 @@ import (
 
 type User struct {
 	gorm.Model
-	Username string `json:"username"`
-	Email    string `json:"email"`
-	Password string `json:"-"`
-	VKID     string `json:"vk_id"`
-	GoogleID string `json:"google_id"`
+	Username string  `json:"username"`
+	Email    string  `json:"email"`
+	Password string  `json:"-"`
+	VKID     float64 `json:"vk_id"`
+	GoogleID string  `json:"google_id"`
 }

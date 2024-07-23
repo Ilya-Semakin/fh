@@ -6,6 +6,11 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/Ilya-Semakin/fh/config"
+	middelwares "github.com/Ilya-Semakin/fh/middlewares"
+	"github.com/Ilya-Semakin/fh/models"
+	"github.com/Ilya-Semakin/fh/services"
+	"github.com/Ilya-Semakin/fh/utils"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/oauth2"
 )
@@ -59,7 +64,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	token, err := utils.GenerateJWT(user.ID)
+	token, err := middelwares.GenerateJWT(user.ID)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
@@ -108,7 +113,7 @@ func OAuthVKCallback(c *gin.Context) {
 		config.DB.Create(&user)
 	}
 
-	tokenString, err := utils.GenerateJWT(user.ID)
+	tokenString, err := middelwares.GenerateJWT(user.ID)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
@@ -156,7 +161,7 @@ func OAuthGoogleCallback(c *gin.Context) {
 		config.DB.Create(&user)
 	}
 
-	tokenString, err := utils.GenerateJWT(user.ID)
+	tokenString, err := middelwares.GenerateJWT(user.ID)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
