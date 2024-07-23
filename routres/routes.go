@@ -1,9 +1,9 @@
 package routes
 
 import (
+	"github.com/Ilya-Semakin/fh/controllers"
+	"github.com/Ilya-Semakin/fh/middlewares"
 	"github.com/gin-gonic/gin"
-	"github.com/yourusername/project/controllers"
-	"github.com/yourusername/project/middlewares"
 )
 
 func SetupRoutes(r *gin.Engine) {
