@@ -1,0 +1,14 @@
+name: fh-network
+
+services:
+  auth:
+    build: .
+    networks:
+      - fh
+    ports:
+      - "80:8080"
+
+
+networks:
+  fh:
+    driver: bridge
